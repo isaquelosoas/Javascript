@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Pares</title></head>
+    <body>
+        <script>
+            function pares(x,y){
+                
+                for(var num = 0;num <= y; num++){
+                    var par = num >= x && num <=y && num%2 == 0? true:false;
+                    if (par){
+                        console.log(num);
+                    }                   
+                }
+                
+            }
+            pares(3,50);
+        </script>
+    </body>
+</html>
