@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            function habilidade(usuario){
+                for(var values of usuario){
+                    var descricao = values.nome + " possui as seguintes habilidades: "+ values.habilidades.join(', ')
+                    console.log(descricao);
+                }
+            }
+            var usuarios = [
+            {
+            nome: "Diego",
+            habilidades: ["Javascript", "ReactJS", "Redux"]
+            },
+            {
+            nome: "Gabriel",
+            habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+            }
+            ];
+            habilidade(usuarios);
+        </script>
+    </body>
+</html>
