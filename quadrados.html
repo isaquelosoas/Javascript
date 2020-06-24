@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quadrados</title>
+    </head>
+    <body>
+        <button class='quadrado'>Clique para gerar quadrados</button><br>        
+        <script>
+            var button = document.querySelector('button.quadrado'); 
+            ;
+            
+                               
+            button.onclick = function(){
+                var quadElement = document.createElement('div');
+                quadElement.setAttribute('class','quadrado'); 
+                quadElement.style.width = '100px';
+                quadElement.style.height = '100px';
+                quadElement.style.backgroundColor = 'red';
+                quadElement.style.display = 'inline-block';
+                var container = document.querySelector('body');
+                container.appendChild(quadElement);
+                var quad = document.querySelectorAll('div.quadrado');               
+                for (var qtd = 0; qtd < quad.length; qtd++) {
+                    quad[qtd].onmouseover = function(){
+                        function getRandomColor() {
+                            var letters = "0123456789ABCDEF";
+                            var color = "#";
+                            for (var i = 0; i < 6; i++) {
+                            color += letters[Math.floor(Math.random() * 16)];
+                            }
+                            return color;
+                            }
+                        var newColor = getRandomColor(); 
+                        var quad = document.querySelectorAll('div.quadrado');
+                        this.style.backgroundColor = newColor;                        
+
+                    }  
+                } 
+                                           
+            } ;
+            
+            
+            
+            
+            
+                
+                
+                
+                  
+
+
+        </script>        
+    </body>
+</html>
