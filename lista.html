@@ -10,13 +10,14 @@
         </ul>
         <script>
             function adicionar(){
-                valor = document.getElementById('valor').value;
+                valor = document.getElementById('valor');
                 console.log(valor);
                 var liElement =  document.createElement('li');
-                var texto = document.createTextNode(valor);
+                var texto = document.createTextNode(valor.value);
                 liElement.appendChild(texto);
                 var container = document.querySelector("ul.lista");
-                container.appendChild(liElement);
+                container.appendChild(liElement);                
+                valor.value = '';
 
             } 
             var nomes = ["Diego", "Gabriel", "Lucas", "Isaque", "Marília"];
