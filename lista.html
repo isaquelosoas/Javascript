@@ -4,9 +4,21 @@
         <title>Lista de Nomes</title>
     </head>
     <body>
+        <input type="text" name="nome" id='valor'>
+        <button onClick="adicionar()">Adicionar</button>
         <ul class='lista'>           
         </ul>
         <script>
+            function adicionar(){
+                valor = document.getElementById('valor').value;
+                console.log(valor);
+                var liElement =  document.createElement('li');
+                var texto = document.createTextNode(valor);
+                liElement.appendChild(texto);
+                var container = document.querySelector("ul.lista");
+                container.appendChild(liElement);
+
+            } 
             var nomes = ["Diego", "Gabriel", "Lucas", "Isaque", "Marília"];
 
             for (var value of nomes){
