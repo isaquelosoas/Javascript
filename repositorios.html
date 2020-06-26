@@ -14,10 +14,14 @@
                 axios.get(perfil)
                     .then(function(response){
                         console.log(response);
-                        var h1 =document.createElement('h1');
-                        var text = document.createTextNode(response.data[0].name);
-                        console.log(response.data[0].name);
-                        h1.appendChild(text);
+                        for (repo of response.data ){
+                            var h1 =document.createElement('h1');
+                            var text = document.createTextNode(repo.name);
+                            console.log(repo.name);
+                            h1.appendChild(text);
+                            var container = document.querySelector('body');
+                            container.appendChild(h1);
+                        }
 
 
                     })
