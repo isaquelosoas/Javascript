@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Checa Idade</title>        
+    </head>
+    <body>
+        <input type='number' name='idade'/>        
+        <script>
+           
+            
+            var checaIdade = function(idade){                
+                return new Promise(function(resolve, reject){
+                setTimeout(()=>{if (idade < 18){
+                    resolve('criança');                    
+                }
+                else{
+                    reject('adulto');
+                } }, 5000)
+                
+                               
+            
+
+                })
+            }
+                               
+           
+            checaIdade(18)
+                .then(function(response) {
+                console.log(response);
+                })
+                .catch(function(error) {
+                console.log(error);
+                });
+ 
+                  
+                
+
+        </script>
+    </body>
+</html>

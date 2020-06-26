@@ -13,14 +13,18 @@
                 valor = document.getElementById('valor');
                 console.log(valor);
                 var liElement =  document.createElement('li');
+                nomes.push(valor.value);
                 var texto = document.createTextNode(valor.value);
                 liElement.appendChild(texto);
                 var container = document.querySelector("ul.lista");
                 container.appendChild(liElement);                
                 valor.value = '';
+                console.log(nomes);
+                storage();
 
             } 
-            var nomes = ["Diego", "Gabriel", "Lucas", "Isaque", "Marília"];
+            var nomes = JSON.parse(localStorage.getItem('lista')) || [];
+            
 
             for (var value of nomes){
                 var liElement =  document.createElement('li');
@@ -28,6 +32,9 @@
                 liElement.appendChild(texto);
                 var container = document.querySelector("ul.lista");
                 container.appendChild(liElement);               
+            }
+            function storage(){
+                localStorage.setItem('lista', JSON.stringify(nomes));
             }
         </script>
     </body>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Repositórios</title>
+    </head>
+    <body>
+        <input type="text" name="perfil" id="perfil">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script>
+            var nomePerfil = document.querySelector('input#perfil');
+            perfil.setAttribute('onFocusOut', 'getPerfil()');
+            function getPerfil(){ 
+                var perfil = 'https://api.github.com/users/'+nomePerfil.value.toLowerCase()+'/repos' ;                     
+                axios.get(perfil)
+                    .then(function(response){
+                        console.log(response);
+                        var h1 =document.createElement('h1');
+                        var text = document.createTextNode(response.data[0].name);
+                        console.log(response.data[0].name);
+                        h1.appendChild(text);
+
+
+                    })
+                    .catch(function (error) {
+                        console.warn(error);
+                        
+                    });                    
+                console.log(); 
+            }
+        </script>
+    </body>
+</html>
